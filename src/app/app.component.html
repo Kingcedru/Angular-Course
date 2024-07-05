@@ -1,3 +1,2 @@
-<h2>Two-way Binding Example</h2>
-<input [(ngModel)]="favorateAnimal"/>
-<p>{{favorateAnimal}}</p>
+<input type="text" #pokemonName />
+<button (click)="handleClick(pokemonName.value)">Click</button>

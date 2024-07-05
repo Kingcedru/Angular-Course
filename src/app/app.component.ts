@@ -10,5 +10,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  favorateAnimal: string = "turtle"
+  pokemonName: string = ""
+
+  handleClick(value:any){
+    console.log(value)
+  }
 }
