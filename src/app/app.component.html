@@ -1,2 +1,4 @@
-<input type="text" #pokemonName />
-<button (click)="handleClick(pokemonName.value)">Click</button>
+<input type="text" [value]="pokemonName" (input)="handleChange($event)" />
+<p>{{ pokemonName }}</p>
+
+<div *ngIf="!pokemonName">No search results found...</div>
