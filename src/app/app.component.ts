@@ -11,9 +11,21 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  pokemonName: string = '';
-
-  handleChange(event: any) {
-    this.pokemonName = event.target.value;
-  }
+  pokemons: any = [
+    {
+      id: 1,
+      name: 'pikachu',
+      type: 'electric',
+    },
+    {
+      id: 2,
+      name: 'squirtle',
+      type: 'water',
+    },
+    {
+      id: 3,
+      name: 'charmander',
+      type: 'fire',
+    },
+  ];
 }
