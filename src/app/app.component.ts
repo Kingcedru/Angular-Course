@@ -11,22 +11,4 @@ import { PokemonBaseModule } from './pokemon-base/pokemon-base.module';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  pokemons: any = [
-    {
-      id: 1,
-      name: 'pikachu',
-      type: 'electric',
-    },
-    {
-      id: 2,
-      name: 'squirtle',
-      type: 'water',
-    },
-    {
-      id: 3,
-      name: 'charmander',
-      type: 'fire',
-    },
-  ];
-}
+export class AppComponent {}
