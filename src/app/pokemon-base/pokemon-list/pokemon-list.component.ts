@@ -1,3 +1,4 @@
+import { PokemonService } from './../../services/pokemon.service';
 import { Pokemon } from './../../models/pokemon';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,35 +12,16 @@ import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.compone
   styleUrl: './pokemon-list.component.css',
 })
 export class PokemonListComponent implements OnInit {
-  pokemons: Pokemon[] = [
-    {
-      id: 1,
-      name: 'pikachu',
-      type: 'electric',
-      isCool: false,
-      isStylish: true,
-    },
-    {
-      id: 2,
-      name: 'squirtle',
-      type: 'water',
-      isCool: true,
-      isStylish: true,
-    },
-    {
-      id: 3,
-      name: 'charmander',
-      type: 'fire',
-      isCool: true,
-      isStylish: false,
-    },
-  ];
+  pokemons!: Pokemon[];
+  constructor(private pokemonService: PokemonService) {}
+
   handleRemove(event: Pokemon) {
     this.pokemons = this.pokemons.filter((pokemon: Pokemon) => {
       return pokemon.id !== event.id;
     });
   }
 
-  constructor() {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.pokemons = this.pokemonService.getPokemons();
+  }
 }
