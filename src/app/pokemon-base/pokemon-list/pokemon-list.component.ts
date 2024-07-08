@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Pokemon } from '../../models/pokemon';
+import { Pokemon } from './../../models/pokemon';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
 
@@ -10,7 +10,7 @@ import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.compone
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.css',
 })
-export class PokemonListComponent {
+export class PokemonListComponent implements OnInit {
   pokemons: Pokemon[] = [
     {
       id: 1,
@@ -20,18 +20,26 @@ export class PokemonListComponent {
       isStylish: true,
     },
     {
-      id: 1,
+      id: 2,
       name: 'squirtle',
       type: 'water',
       isCool: true,
       isStylish: true,
     },
     {
-      id: 1,
+      id: 3,
       name: 'charmander',
       type: 'fire',
       isCool: true,
       isStylish: false,
     },
   ];
+  handleRemove(event: Pokemon) {
+    this.pokemons = this.pokemons.filter((pokemon: Pokemon) => {
+      return pokemon.id !== event.id;
+    });
+  }
+
+  constructor() {}
+  ngOnInit(): void {}
 }
