@@ -13,8 +13,6 @@ export class PokemonTemplateFormComponent implements OnInit {
 
   getPokemon(id: number) {}
   ngOnInit() {
-    this.PokemonService.getPokemon(1).subscribe((data: Pokemon) => {
-      this.pokemon = data;
-    });
+    this.PokemonService.getPokemon(1);
   }
 }
